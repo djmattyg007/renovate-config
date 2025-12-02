@@ -1,0 +1,22 @@
+{
+  packageRules: [
+    {
+      groupName: "python",
+      matchDepNames: ["python", "docker.io/python", "public.ecr.aws/lambda/python"],
+      automerge: false,
+      separateMultipleMinor: true,
+    },
+    {
+      groupName: "Flake8",
+      matchPackageNames: ["flake8*"],
+      matchUpdateTypes: ["major", "minor", "patch"],
+      automerge: true,
+    },
+    {
+      groupName: "Pytest",
+      matchPackageNames: ["pytest*"],
+      matchUpdateTypes: ["major", "minor", "patch"],
+      automerge: true,
+    },
+  ],
+}
