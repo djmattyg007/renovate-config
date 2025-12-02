@@ -1,0 +1,15 @@
+{
+  customManagers: [
+    {
+      datasourceTemplate: "custom.hashicorp",
+      customType: "regex",
+      fileMatch: [
+        "^.*$",
+      ],
+      matchStrings: [
+        "# renovate hashicorp: depName=(?<depName>.+?)\\s.+?_VERSION=\"?(?<currentValue>.+?)\"?\\s",
+      ],
+      versioningTemplate: "semver",
+    },
+  ],
+}

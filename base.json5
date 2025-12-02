@@ -1,0 +1,26 @@
+{
+  extends: [
+    "config:best-practices",
+    ":timezone(Australia/Melbourne)",
+    "schedule:weekends",
+    ":semanticCommitsDisabled",
+    ":pinOnlyDevDependencies",
+    "local>djmattyg007/renovate-config:container-image-references.json5",
+    "local>djmattyg007/renovate-config:hashicorp.json5",
+    "local>djmattyg007/renovate-config:version-variables.json5",
+  ],
+  dependencyDashboard: true,
+  lockFileMaintenance: {
+    enabled: true,
+    branchTopic: "lock-file-maintenance-{{manager}}",
+    commitMessageExtra: "({{manager}})",
+  },
+  customDatasources: {
+    hashicorp: {
+      defaultRegistryUrlTemplate: "https://api.releases.hashicorp.com/v1/releases/{{packageName}}?license_class=oss",
+      transformTemplates: [
+        "{ \"releases\": $map($, function($v) { { \"version\": $v.version, \"releaseTimestamp\": $v.timestamp_created, \"changelogUrl\": $v.url_changelog, \"sourceUrl\": $v.url_source_repository } }), \"homepage\": $[0].url_project_website, \"sourceUrl\": $[0].url_source_repository }",
+      ],
+    },
+  },
+}

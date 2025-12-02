@@ -1,0 +1,14 @@
+{
+  customManagers: [
+    {
+      customType: "regex",
+      description: "Maintain *_VERSION/_version variables formatted as X.Y.Z",
+      fileMatch: [
+        "^.+$",
+      ],
+      matchStrings: [
+        "# renovate: datasource=(?<datasource>[a-z-]+?)(?: registryUrl=(?<registryUrl>.+?))? depName=(?<depName>.+?)(?: lookupName=(?<lookupName>.+?))?(?: versioning=(?<versioning>.+?))?\\s.+?_(VERSION|version)\\s*=\\s*\"?(?<currentValue>.+?)\"?\\s",
+      ],
+    },
+  ],
+}

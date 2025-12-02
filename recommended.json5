@@ -1,0 +1,8 @@
+{
+  extends: [
+    "local>djmattyg007/renovate-config:base.json5",
+    "local>djmattyg007/renovate-config:group-all-non-major.json5",
+    "local>djmattyg007/renovate-config:latest-only-ci-plugins.json5",
+    "local>djmattyg007/renovate-config:automerge-all-non-major.json5",
+  ],
+}

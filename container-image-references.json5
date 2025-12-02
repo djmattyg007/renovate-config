@@ -1,0 +1,16 @@
+{
+  customManagers: [
+    {
+      customType: "regex",
+      description: "Maintain container image references from popular registries",
+      fileMatch: [
+        "^.*$",
+      ],
+      matchStrings: [
+        "(?<depName>(docker|ghcr|registry\\.k8s)\\.io/[\\w\\-]+/[\\w\\-]+):(?:latest)?(?<currentValue>[\\w\\.\\-]+)?@?(?<currentDigest>sha256:[a-f0-9]+)?",
+        "(?<depName>public\\.ecr\\.aws/[\\w\\-]+/[\\w\\-]+):(?:latest)?(?<currentValue>[\\w\\.\\-]+)?@?(?<currentDigest>sha256:[a-f0-9]+)?",
+      ],
+      datasourceTemplate: "docker",
+    },
+  ],
+}

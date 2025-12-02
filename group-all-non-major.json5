@@ -1,0 +1,10 @@
+{
+  packageRules: [
+    {
+      matchPackageNames: ["*"],
+      matchUpdateTypes: ["minor", "patch", "pin", "digest"],
+      groupName: "all non-major dependencies",
+      groupSlug: "all-minor-patch",
+    },
+  ],
+}
