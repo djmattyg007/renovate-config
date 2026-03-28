@@ -6,4 +6,13 @@
     "local>djmattyg007/renovate-config:automerge-all-non-major.json5",
     "local>djmattyg007/renovate-config:mise.json5",
   ],
+  packageRules: [
+    {
+      // There's no point trying to pin Renovatebot container image references,
+      // because it updates far too often to be worth it.
+      matchUpdateTypes: ["pin"],
+      matchPackageName: ["ghcr.io/renovatebot/renovate"],
+      enabled: false,
+    },
+  ],
 }
