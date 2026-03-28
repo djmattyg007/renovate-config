@@ -9,6 +9,7 @@ on:
 
 jobs:
   main:
+    name: "Validate configuration"
     runs-on: "ubuntu-latest"
 
     steps:
