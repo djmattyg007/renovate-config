@@ -4,8 +4,8 @@
       // Renovatebot doesn't currently support Mise lock files, which we need.
       // https://github.com/renovatebot/renovate/issues/40568
       // https://github.com/renovatebot/renovate/pull/42099
-      matchManagers: ["mise"],
       groupName: "Mise",
+      matchManagers: ["mise"],
       automerge: false,
     },
   ],

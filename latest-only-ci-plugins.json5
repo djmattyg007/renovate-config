@@ -1,8 +1,8 @@
 {
   packageRules: [
     {
-      groupName: "github-actions",
       matchManagers: ["github-actions"],
+      groupName: "Github Actions",
       separateMajorMinor: false,
     },
   ],
