@@ -23,5 +23,6 @@ jobs:
       - name: "Check Renovatebot config"
         uses: "docker://ghcr.io/renovatebot/renovate"
         with:
-          entrypoint: "bash"
-          args: "-c 'renovate-config-validator --strict --no-global *.json5'"
+          # Use a custom entrypoint script so we can make use of globbing.
+          # The Github syntax for 'args' doesn't allow it.
+          entrypoint: "dev/config-check-entrypoint.sh"
