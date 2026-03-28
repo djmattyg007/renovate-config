@@ -23,4 +23,5 @@ jobs:
       - name: "Check Renovatebot config"
         uses: "docker://ghcr.io/renovatebot/renovate"
         with:
+          entrypoint: "bash"
           args: "renovate-config-validator --strict --no-global *.json5"
