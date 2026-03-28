@@ -21,7 +21,7 @@ jobs:
           python3 dev/validate-filenames.py
 
       - name: "Check Renovatebot config"
-        uses: "docker://ghcr.io/renovatebot/renovate"
+        uses: "docker://ghcr.io/renovatebot/renovate@sha256:592aac100dc9a3688083d2c8cd512fce1d2ba41990edd4b22f0d77a6aebe245f"
         with:
           entrypoint: "bash"
           args: "-c 'renovate-config-validator --strict --no-global *.json5'"
