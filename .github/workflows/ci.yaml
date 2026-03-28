@@ -18,3 +18,8 @@ jobs:
       - name: "Validate filenames"
         run: |
           python3 dev/validate-filenames.py
+
+      - name: "Check Renovatebot config"
+        uses: "docker://ghcr.io/renovatebot/renovate"
+        with:
+          args: "renovate-config-validator --strict --no-global *.json5"

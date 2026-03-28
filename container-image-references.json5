@@ -3,8 +3,8 @@
     {
       customType: "regex",
       description: "Maintain container image references from popular registries",
-      fileMatch: [
-        "^.*$",
+      managerFilePatterns: [
+        "/^.*$/",
       ],
       matchStrings: [
         "(?<depName>(docker|ghcr|registry\\.k8s)\\.io/[\\w\\-]+/[\\w\\-]+):(?:latest)?(?<currentValue>[\\w\\.\\-]+)?@?(?<currentDigest>sha256:[a-f0-9]+)?",

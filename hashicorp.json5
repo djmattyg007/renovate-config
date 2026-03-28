@@ -3,8 +3,8 @@
     {
       datasourceTemplate: "custom.hashicorp",
       customType: "regex",
-      fileMatch: [
-        "^.*$",
+      managerFilePatterns: [
+        "/^.*$/",
       ],
       matchStrings: [
         "# renovate hashicorp: depName=(?<depName>.+?)\\s.+?_VERSION=\"?(?<currentValue>.+?)\"?\\s",

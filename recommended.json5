@@ -11,7 +11,7 @@
       // There's no point trying to pin Renovatebot container image references,
       // because it updates far too often to be worth it.
       matchUpdateTypes: ["pin"],
-      matchPackageName: ["ghcr.io/renovatebot/renovate"],
+      matchPackageNames: ["ghcr.io/renovatebot/renovate"],
       enabled: false,
     },
   ],
